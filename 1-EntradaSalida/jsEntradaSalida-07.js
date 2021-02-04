@@ -5,21 +5,70 @@ mostrar el resulto por medio de "ALERT"
 ej.: "la Resta es 750"*/ 
 function sumar()
 {	
-	alert("ok");	
+	let numerouno;
+	let numerodos;
+	let resultado;
+
+	numerouno = document.getElementById('txtIdNumeroUno').value;
+	numerodos = document.getElementById('txtIdNumeroDos').value;
+
+	numerouno=parseInt(numerouno); //antes de hacer la variable resultado que va a tener una accion matematica, pido que me traiga con parseInt los numeros enteros//
+	numerodos=parseInt(numerodos);
+
+	resultado = numerouno+numerodos;
+
+	alert("La suma es "+resultado);	
 }
 
 function restar()
 {
+	let numerouno;
+	let numerodos;
+	let resultado;
+
+	numerouno = document.getElementById('txtIdNumeroUno').value;
+	numerodos = document.getElementById('txtIdNumeroDos').value;
+
+	numerouno=parseInt(numerouno);
+	numerodos=parseInt(numerodos);
+
+	resultado = numerouno - numerodos;
+
+	alert("La resta es "+resultado);	
 	
 }
 
 function multiplicar()
 { 
-	
+	let numerouno;
+	let numerodos;
+	let resultado;
+
+	numerouno = document.getElementById('txtIdNumeroUno').value;
+	numerodos = document.getElementById('txtIdNumeroDos').value;
+
+	numerouno=parseInt(numerouno);
+	numerodos=parseInt(numerodos);
+
+	resultado = numerouno * numerodos;
+
+	alert("La multiplicación es "+resultado);	
 }
 
 function dividir()
 {
-	
+	let numerouno;
+	let numerodos;
+	let resultado;
+
+	numerouno = document.getElementById('txtIdNumeroUno').value;
+	numerodos = document.getElementById('txtIdNumeroDos').value;
+
+	numerouno=parseInt(numerouno);
+	numerodos=parseInt(numerodos);
+
+	resultado = numerouno / numerodos;
+
+	alert("La dividisión es "+resultado);	
 }
 
