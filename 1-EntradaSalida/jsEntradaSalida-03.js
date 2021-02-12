@@ -4,8 +4,12 @@ y luego mostrarlo por 'Alert' al presionar el botón  'mostrar'*/
 function mostrar()
 {
 	let nombreIngresado;
-	nombreIngresado=txtIdNombre.value; //para que funcione en todos los navegadores se deberia poner document.getElementById(meto el id del html) 
+	
+	nombreIngresado= document.getElementById('txtIdNombre').value; //me guarda la variable en la caja del html
+	
 	alert(nombreIngresado); //poner el alert para testear aunque no lo pidan, puede ayudar a identificar errores
+
+	document.getElementById('txtIdNombre').value = ""; 	//para hacer que se borre lo ingresado y quede todo como antes
 
 }
 

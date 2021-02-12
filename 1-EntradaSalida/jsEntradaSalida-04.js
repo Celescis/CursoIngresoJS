@@ -4,14 +4,13 @@ y lo muestro por 'ID' al presionar el botón 'mostrar'
 */
 function mostrar() {
 	let nombre
-	let apellido
-	nombre = prompt("Ingrese su nombre: ", ""); //se deja un espacio entre comillas porque ahi va a ir el valor//
-	apellido = prompt("Ingrese su apellido: ", "");
 
-	alert("Su nombre ingresado es: " + nombre + " " + apellido);
+	nombre = prompt("Ingrese su nombre: ", ""); //se deja un espacio entre comillas porque ahi va a ir el valor//
+
+	alert("Su nombre ingresado es: " + nombre);
 
 	//dato por id document.getElementById buscamos en el html el codigo que deberia tener el valor//
-	document.getElementById('txtIdNombre').value = nombre +" "+ apellido //MUESTRA DATOS SI LO DEJAMOS AL FINAL//
+	document.getElementById('txtIdNombre').value = nombre //COPIA EL NOMBRE QUE TENGO EN LA VARIABLE DENTRO DE LA CAJA DE TEXTO//
 
 /*function mostrar() LO QUE HIZO EL PROFE
 {

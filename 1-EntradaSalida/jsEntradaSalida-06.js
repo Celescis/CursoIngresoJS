@@ -23,5 +23,14 @@ function sumar()
 	y pongo un alert con esa variable
 	alert(respuesta);*/
 
+	/*STRING + STRING = STRING OSEA CONCATENA
+	STRING + NUMBER = STRING
+	NUMER + NUMBER = NUMBER
+	
+	Parsear es convertir un tipo de dato que no es numero, a un numero 
+	castear es convertir un tipo de dato numero en otro numerico
+	el parse FLOAT convierte un dato que no es numero en numero con decimales el INT en enteros
+	*/
+
 }
 

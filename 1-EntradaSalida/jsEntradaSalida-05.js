@@ -29,5 +29,9 @@ function mostrar()
 
 
 	alert(apellido+", Usted se llama "+nombre+" y tiene "+edad+" años");
+	//otra forma de escribirlo: alert(`${apellido}, Usted se llama ${nombre} y tiene ${edad} años`)
+	
+	document.getElementById('txtIdNombre').value="";//luego de que me mostro los datos, esto me permite dejar todo en blanco para el proximo
+	document.getElementById('txtIdEdad').value="";
 
 }

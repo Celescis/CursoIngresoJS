@@ -12,10 +12,12 @@ function sumar()
 	numerouno = document.getElementById('txtIdNumeroUno').value;
 	numerodos = document.getElementById('txtIdNumeroDos').value;
 
-	numerouno=parseInt(numerouno); //antes de hacer la variable resultado que va a tener una accion matematica, pido que me traiga con parseInt los numeros enteros//
+	numerouno=parseInt(numerouno); //antes de hacer la variable resultado que va a tener una accion matematica, pido que me convierta el dato a numero entero
 	numerodos=parseInt(numerodos);
 
 	resultado = numerouno+numerodos;
+	
+	alert(typeof resultado); //PARA SABER QUE TIPO DE STRING ES O SI ES NUMERO
 
 	alert("La suma es "+resultado);	
 }

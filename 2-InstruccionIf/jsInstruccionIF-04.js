@@ -1,7 +1,23 @@
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
+	//PARA ANIDAR IF PONGO UNO ADENTRO DEL OTRO
+	let edad;
 
+	edad=document.getElementById('txtIdEdad').value;
+	edad=parseInt(edad);
 
-}//FIN DE LA FUNCIÓN
+	/* IF ANIDADOS
+	if(edad>=13)
+	{
+		if(edad<=17)
+		{
+			alert("Es adolescente");
+		}
+	}
+	*/
+	if(edad >=13 && edad <= 17)
+	{
+		alert("Es adolescente");
+	}
+
+}
