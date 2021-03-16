@@ -3,189 +3,67 @@ se pide el ingreso de una estacion del año y localidad para vacacionar para pod
 en Invierno: bariloche tiene un aumento del 20% cataratas y Cordoba tiene un descuento del 10% Mar del plata tiene un descuento del 20%
 en Verano: bariloche tiene un descuento del 20% cataratas y Cordoba tiene un aumento del 10% Mar del plata tiene un aumento del 20%
 en Otoño y Primavera: bariloche tiene un aumento del 10% cataratas tiene un aumento del 10% Mar del plata tiene un aumento del 10% y Cordoba tiene el precio sin descuento */
-function mostrar() 
-{
+function mostrar() {
 	let estacion;
 	let destino;
-	let tarifabase=15000;
-	let descuento;
-	let aumento;
-	let tarifafinal;
+	let tarifaBase = 15000;
+	let porcentaje;
+	let tarifaFinal;
 	let mensaje;
-	
+
 	estacion = document.getElementById('txtIdEstacion').value;
 	destino = document.getElementById('txtIdDestino').value;
-	tarifabase = parseInt(tarifabase);
+	tarifaBase = parseInt(tarifaBase);
 
-	switch(estacion)
-	{
+	switch (estacion) {
 		case "Invierno":
-			if(destino=="Bariloche")
-			{
-				aumento=20;
-				tarifafinal=tarifabase+(tarifabase*(aumento/100));
+			switch (destino) {
+				case "Bariloche":
+					porcentaje = 20;
+					break;
+				case "Mar del plata":
+					porcentaje = -20;
+					break;
+				default:
+					porcentaje = -10;
+					break;
 			}
-			else if(destino=="Mar del plata")
-			{
-				descuento=20;
-				tarifafinal=tarifabase-(tarifabase*(descuento/100));
-			}
-			else
-			{
-				descuento=10;
-				tarifafinal=tarifabase-(tarifabase*(descuento/100));
-			}
-		break;
+			break;
 
 		case "Verano":
-			if(destino=="Bariloche")
-			{
-				descuento=20;
-				tarifafinal=tarifabase-(tarifabase*(descuento/100));
+			switch (destino) {
+				case "Bariloche":
+					porcentaje = -20;
+					break;
+				case "Mar del plata":
+					porcentaje = 20;
+					break;
+				default:
+					porcentaje = 10;
+					break;
 			}
-			else if(destino=="Mar del plata")
-			{
-				aumento=20;
-				tarifafinal=tarifabase+(tarifabase*(aumento/100));
-			}
-			else
-			{
-				aumento=10;
-				tarifafinal=tarifabase+(tarifabase*(aumento/100));
-			}
-		break;
+			break;
 
 		default:
-			if(destino=="Bariloche")
-			{
-				aumento=10;
-				tarifafinal=tarifabase+(tarifabase*(aumento/100));
-			}
-			else if(destino=="Cordoba")
-			{
-				tarifafinal=tarifabase;
-			}
-			else
-			{
-				aumento=10;
-				tarifafinal=tarifabase+(tarifabase*(aumento/100));
-			}
-		break;
-	}
-	
-	tarifafinal = parseFloat(tarifafinal);
-	mensaje = "La tarifa a pagar es de: $" + tarifafinal;
-	alert(mensaje);
-	
-	
-	/*
-	PODRIA CREAR UNAS VARIABLES PARA SOLO HACER UNA VEZ EL CALCULO DE AUMENTO Y DESCUENTO Y AL FINAL HACER UN IF
-	QUE DEFINA QUE VALOR VA, EN VEZ DE HACER UN CALCULO ENTRE CADA IF.
-	
-	let estacion;
-	let destino;
-	let tarifabase=15000;
-	let descuento;
-	let tarifadescuento;
-	let aumento;
-	let tarifaaumento;
-	let tarifafinal;
-	let mensaje;
-
-	estacion = document.getElementById('txtIdEstacion').value;
-	destino = document.getElementById('txtIdDestino').value;
-	tarifabase = parseInt(tarifabase);
-
-	switch(estacion)
-	{
-		case "Invierno":
-			if(destino=="Bariloche")
-			{
-				aumento=20;
-			}
-			else if(destino=="Mar del plata")
-			{
-				descuento=20;
-			}
-			else
-			{
-				descuento=10;
-			}
-		break;
-	}
-	
-	tarifaaumento=tarifabase+(tarifabase*(aumento/100));
-	tarifadescuento=tarifabase-(tarifabase*(descuento/100));
-	if(aumento)
-	{
-		tarifafinal= tarifaaumento;
-	}
-	else if (descuento)
-	{
-		tarifafinal= tarifadescuento;
-	}
-
-	tarifafinal = parseFloat(tarifafinal);
-	mensaje = "La tarifa a pagar es de: $" + tarifafinal;
-	alert(mensaje);*/
-
-
-	/*if (estacion == "Invierno") 
-	{
-		switch (destino) 
-		{
-			case "Bariloche":
-				aumento = 20;
-				tarifas = tarifabase + ((tarifabase * aumento) / 100);
-			break;
-
-			case "Cataratas":
-			case "Cordoba":
-				descuento = 10;
-				tarifas = tarifabase -((tarifabase * descuento) / 100);
-			break;
-
-			case "Mar del plata":
-				descuento = 20;
-				tarifas = tarifabase - ((tarifabase * descuento) / 100);
-			break;
-		}
-		if (estacion == "Verano") 
-		{
-			switch (destino) 
-			{
+			switch (destino) {
 				case "Bariloche":
-					descuento=20;
-					tarifas = tarifabase - ((tarifabase * descuento) / 100);
-				break;
-
-				case "Cataratas":
+					porcentaje = 10;
+					break;
 				case "Cordoba":
-					aumento = 10;
-					tarifas = tarifabase + ((tarifabase * aumento) / 100);
-				break;
-
-				case "Mar del plata":
-					aumento = 20;
-					tarifas = tarifabase + ((tarifabase * aumento) / 100);
-				break;
+					tarifaFinal = tarifaBase;
+					break;
+				default:
+					porcentaje = 10;
+					break;
 			}
-		}
-	}
-	else 
-	{
-		switch (destino) 
-		{
-			case "Cordoba":
-				tarifas = tarifabase;
 			break;
-			
-			default:
-				aumento = 10;
-				tarifas = tarifabase + ((tarifabase * aumento) / 100);
-			break;
-		}
 	}
-*/
-	
+
+	tarifaFinal = tarifaBase + (tarifaBase * (porcentaje / 100));
+	tarifaFinal = parseFloat(tarifaFinal);
+
+	mensaje = "La tarifa a pagar es de: $" + tarifaFinal;
+
+	alert(mensaje);
+
 } //FIN DE LA FUNCIÓN

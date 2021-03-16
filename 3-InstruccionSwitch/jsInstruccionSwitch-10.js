@@ -16,39 +16,37 @@ function mostrar()
 	switch(estacion)
 	{
 		case "Invierno":
-		
-			if(destino=="Bariloche")
-			{
-				mensaje="Se viaja";
-			}
-			else
-			{
-				mensaje="No se viaja";
+			switch(destino){
+				case "Bariloche":
+					mensaje="Se viaja";
+				break;
+				default:
+					mensaje="No se viaja";
+					break;
 			}
 		break;
 
 		case "Verano":
-			if(destino=="Mar del plata" && destino=="Cataratas")
-			{
-				mensaje="Se viaja";
-			}
-			else
-			{
-				mensaje= "No se viaja";
+			switch(destino){
+				case "Mar del plata":
+				case "Cataratas":
+					mensaje="Se viaja";
+				break;
+				default:
+					mensaje="No se viaja";
+					break;
 			}
 		break;
-
 		case "Primavera":
-			if(destino=="Bariloche")
-			{
-				mensaje= "No se viaja";
-			}
-			else
-			{
-				mensaje="Se viaja";
+			switch(destino){
+				case "Bariloche":
+					mensaje= "No se viaja";
+				break;
+				default:
+					mensaje="Se viaja";
+					break;
 			}
 		break;
-
 		default:
 			mensaje="Se viaja";
 		break;
